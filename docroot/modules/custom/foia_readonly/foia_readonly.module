@@ -14,7 +14,88 @@ use Drupal\Core\Render\Element;
  * Implements hook_form_form_id_alter().
  */
 function foia_readonly_form_node_annual_foia_report_data_edit_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  foia_readonly_disable_node_field($form, $form_state, $form_id);
+}
 
+/**
+ * Implements hook_form_form_id_alter().
+ */
+function foia_readonly_form_node_annual_foia_report_data_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  foia_readonly_disable_node_field($form, $form_state, $form_id);
+}
+
+/**
+ * Implements hook_field_widget_multivalue_WIDGET_TYPE_form_alter().
+ */
+function foia_readonly_field_widget_multivalue_entity_reference_paragraphs_form_alter(array &$elements, FormStateInterface $form_state, array $context) {
+
+  // Set the field names to disable, based on the paragraph element field name.
+  switch ($elements['#field_name']) {
+    case 'field_statute_iv':
+      $field_names = ['field_total_num_relied_by_agency'];
+      break;
+
+    case 'field_foia_requests_va':
+      $field_names = ['field_req_pend_end_yr'];
+      break;
+
+    case 'field_foia_requests_vb1':
+      $field_names = ['field_total'];
+      break;
+
+    case 'field_foia_requests_vb2':
+      $field_names = ['field_total'];
+      break;
+
+    case 'field_admin_app_via':
+      $field_names = ['field_app_pend_end_yr'];
+      break;
+
+    case 'field_admin_app_vib':
+      $field_names = ['field_total'];
+      break;
+
+    case 'field_admin_app_vic3':
+      $field_names = ['field_total'];
+      break;
+
+    case 'field_proc_req_viic1':
+    case 'field_proc_req_viic2':
+    case 'field_proc_req_viic3':
+      $field_names = ['field_total'];
+      break;
+
+    case 'field_foia_pers_costs_ix':
+      $field_names = [
+        'field_total_staff',
+        'field_total_costs',
+      ];
+      break;
+
+    case 'field_fees_x':
+      $field_names = ['field_perc_costs'];
+      break;
+
+    case 'field_foia_xiib':
+      $field_names = ['field_pend_end_yr'];
+      break;
+
+    default:
+      $field_names = [];
+  }
+
+  // For fields to disable, invoke helper function.
+  if ($field_names) {
+    foreach ($field_names as $field_name) {
+      foia_readonly_disable_paragraph_field($elements, $field_name);
+    }
+  }
+}
+
+/**
+ * Helper function for disabling fields on main node type.
+ */
+function foia_readonly_disable_node_field(&$form, FormStateInterface $form_state, $form_id) {
   $fieldsToDisable = [
     'overall_req_pend_start_yr',
     'overall_req_received_yr',
@@ -159,72 +240,6 @@ function foia_readonly_form_node_annual_foia_report_data_edit_form_alter(&$form,
   foreach ($fieldsToDisable as $fieldName) {
     $fullFieldName = 'field_' . $fieldName;
     $form[$fullFieldName]['widget'][0]['value']['#attributes']['disabled'] = TRUE;
-  }
-}
-
-/**
- * Implements hook_field_widget_multivalue_WIDGET_TYPE_form_alter().
- */
-function foia_readonly_field_widget_multivalue_entity_reference_paragraphs_form_alter(array &$elements, FormStateInterface $form_state, array $context) {
-
-  // Set the field names to disable, based on the paragraph element field name.
-  switch ($elements['#field_name']) {
-    case 'field_statute_iv':
-      $field_names = ['field_total_num_relied_by_agency'];
-      break;
-
-    case 'field_foia_requests_va':
-      $field_names = ['field_req_pend_end_yr'];
-      break;
-
-    case 'field_foia_requests_vb1':
-      $field_names = ['field_total'];
-      break;
-
-    case 'field_foia_requests_vb2':
-      $field_names = ['field_total'];
-      break;
-
-    case 'field_admin_app_via':
-      $field_names = ['field_app_pend_end_yr'];
-      break;
-
-    case 'field_admin_app_vib':
-      $field_names = ['field_total'];
-      break;
-
-    case 'field_admin_app_vic3':
-      $field_names = ['field_total'];
-      break;
-
-    case 'field_admin_app_viic1':
-      $field_names = ['field_total'];
-      break;
-
-    case 'field_foia_pers_costs_ix':
-      $field_names = [
-        'field_total_staff',
-        'field_total_costs',
-      ];
-      break;
-
-    case 'field_fees_x':
-      $field_names = ['field_perc_costs'];
-      break;
-
-    case 'field_foia_xiib':
-      $field_names = ['field_pend_end_yr'];
-      break;
-
-    default:
-      $field_names = [];
-  }
-
-  // For fields to disable, invoke helper function.
-  if ($field_names) {
-    foreach ($field_names as $field_name) {
-      foia_readonly_disable_paragraph_field($elements, $field_name);
-    }
   }
 }
 
