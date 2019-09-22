@@ -1,7 +1,0 @@
-foia_readonly.settings_form:
-  path: '/admin/config/system/foia-readonly'
-  defaults:
-    _title: 'FOIA Readonly settings'
-    _form: 'Drupal\foia_readonly\Form\SettingsForm'
-  requirements:
-    _permission: 'administer foia_readonly configuration'

@@ -1,4 +1,0 @@
-administer foia_readonly configuration:
-  title: 'Administer foia_readonly configuration'
-  description: 'Optional description.'
-  restrict access: true
