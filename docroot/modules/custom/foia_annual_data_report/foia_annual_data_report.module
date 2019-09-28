@@ -91,26 +91,27 @@ function foia_annual_data_report_ajax_existing_node(array &$form, FormStateInter
 function foia_annual_data_report_create_node(array $form, FormStateInterface
  $form_state) {
 
-  $is_node = \Drupal::routeMatch()->getParameter('node');
   $response = new AjaxResponse();
   $url = Url::fromRoute('<front>', [], ['absolute' => TRUE]);
 
-  if ($is_node instanceof NodeInterface) {
-    $node = \Drupal::entityTypeManager()->getStorage('node')->create([
-      'type' => 'annual_foia_report_data',
-      'title' => $form_state->getValue('title'),
-      'field_agency' => $form_state->getValue('field_agency'),
-    ]);
-    $node->save();
-    // Why does this not work???
-    $nid = $node->id();
-    $url = $url->toString() . '/node/' . $nid . '/edit';
-  }
+  // Set a temporary title, in case they have not.
+  $report_title = $form_state->getValue('title')[0]['value'] ?
+  $form_state->getValue('title')[0]['value'] :
+  'Agency Report ' . date('Y-m-d');
+
+  $node = \Drupal::entityTypeManager()->getStorage('node')->create([
+    'type' => 'annual_foia_report_data',
+    'title' => $report_title,
+    'field_agency' => $form_state->getValue('field_agency'),
+  ]);
+  $node->save();
+  $nid = $node->id();
+
+  $url = $url->toString() . '/node/' . $nid . '/edit';
 
   $response->addCommand(new RedirectCommand($url));
   $response->addCommand(new AlertCommand("Please wait while the page refreshes"));
-  // Debug.
-  $response->addCommand(new AlertCommand($nid));
+
   return $response;
 }
 
@@ -131,10 +132,18 @@ function foia_annual_data_report_refresh(array $form, FormStateInterface
 
   if ($node instanceof NodeInterface) {
     $nid = $node->id();
-    // $node = Node::load($nid);
-    $node = \Drupal::entityManager()->getStorage('node')->load($nid);
+    $node = \Drupal::entityTypeManager()->getStorage('node')->load($nid);
+
+    // @todo: If users change anything else it doesnt persist.
     $node->set('field_agency', $form_state->getValue('field_agency'));
+
+    // Set as new revision.
+    $node->setNewRevision(TRUE);
+    $node->revision_log = 'Updated Agency for report';
+    $node->setRevisionUserId(\Drupal::currentUser()->id());
+
     $node->save();
+
     $response->addCommand(new RedirectCommand($currentURL->toString()));
     $response->addCommand(new AlertCommand("Please wait while the page refreshes"));
   }
