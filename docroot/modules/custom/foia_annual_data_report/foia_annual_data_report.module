@@ -94,7 +94,7 @@ function foia_annual_data_report_create_node(array $form, FormStateInterface
   $node->save();
   $nid = $node->id();
 
-  $url = $url->toString() . '/node/' . $nid . '/edit';
+  $url = $node->toUrl('edit-form')->toString();
 
   $response->addCommand(new RedirectCommand($url));
   $response->addCommand(new AlertCommand("Please wait while the page refreshes"));
