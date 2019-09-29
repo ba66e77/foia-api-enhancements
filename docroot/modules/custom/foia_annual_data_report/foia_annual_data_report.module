@@ -16,28 +16,23 @@ use Drupal\Core\Ajax\RedirectCommand;
  * Implements hook_form_form_id_alter().
  */
 function foia_annual_data_report_form_node_annual_foia_report_data_edit_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  foia_annual_data_report_ajax_existing_node($form, $form_state, $form_id);
+  foia_annual_data_report_ajax_existing_node($form);
 }
 
 /**
  * Implements hook_form_form_id_alter().
  */
 function foia_annual_data_report_form_node_annual_foia_report_data_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  foia_annual_data_report_ajax_new_node($form, $form_state, $form_id);
+  foia_annual_data_report_ajax_new_node($form);
 }
 
 /**
- * Helper function to add ajax to update the component when the agency changes.
+ * Add ajax to a new annual report node to submit on agency field is set.
  *
  * @param array $form
  *   Form array passed from hook_form_form_id_alter().
- * @param \Drupal\Core\Form\FormStateInterface $form_state
- *   Form state passed from hook_form_form_id_alter().
- * @param string $form_id
- *   Form id passed from hook_form_form_id_alter().
  */
-function foia_annual_data_report_ajax_new_node(array &$form, FormStateInterface
- $form_state, $form_id) {
+function foia_annual_data_report_ajax_new_node(array &$form) {
 
   $form['field_agency']['widget'][0]['target_id']['#ajax'] = [
     'callback' => 'foia_annual_data_report_create_node',
@@ -51,17 +46,12 @@ function foia_annual_data_report_ajax_new_node(array &$form, FormStateInterface
 }
 
 /**
- * Helper function to add ajax to update the component when the agency changes.
+ * Add ajax to a existing annual report node to submit on agency field is set.
  *
  * @param array $form
  *   Form array passed from hook_form_form_id_alter().
- * @param \Drupal\Core\Form\FormStateInterface $form_state
- *   Form state passed from hook_form_form_id_alter().
- * @param string $form_id
- *   Form id passed from hook_form_form_id_alter().
  */
-function foia_annual_data_report_ajax_existing_node(array &$form, FormStateInterface
- $form_state, $form_id) {
+function foia_annual_data_report_ajax_existing_node(array &$form) {
 
   $form['field_agency']['widget'][0]['target_id']['#ajax'] = [
     'callback' => 'foia_annual_data_report_refresh',
@@ -76,9 +66,6 @@ function foia_annual_data_report_ajax_existing_node(array &$form, FormStateInter
 
 /**
  * Save the node and redirect back to the edit page for the node.
- *
- * @todo
- * Figure out how to get the node ID of the newly created entity.
  *
  * @param array $form
  *   Form array passed from hook_form_form_id_alter().
