@@ -13,6 +13,11 @@ use Drupal\Core\Url;
 use Drupal\Core\Ajax\RedirectCommand;
 
 /**
+ * Memory limit to be used for viewing/submitting Annual Report nodes.
+ */
+define('FOIA_ANNUAL_DATA_REPORT_MEMORY_LIMIT', '1024M');
+
+/**
  * Implements hook_form_form_id_alter().
  */
 function foia_annual_data_report_form_node_annual_foia_report_data_edit_form_alter(&$form, FormStateInterface $form_state, $form_id) {
@@ -151,5 +156,24 @@ function foia_annual_data_report_refresh(array $form, FormStateInterface
  * Set the memory limit to 1024M. Should only be used on Annual Report forms.
  */
 function foia_annual_data_report_early_submit($form, FormStateInterface $form_state) {
-  ini_set('memory_limit', '1024M');
+  ini_set('memory_limit', FOIA_ANNUAL_DATA_REPORT_MEMORY_LIMIT);
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_load().
+ */
+function foia_annual_data_report_node_load($entities) {
+  // If there is an Annual Report being loaded and memory is not what we want
+  // then set it.
+  if (ini_get('memory_limit') !== FOIA_ANNUAL_DATA_REPORT_MEMORY_LIMIT) {
+    foreach ($entities as $entity) {
+      if ($entity->bundle() === 'annual_foia_report_data') {
+
+        ini_set('memory_limit', FOIA_ANNUAL_DATA_REPORT_MEMORY_LIMIT);
+
+        // If we already set the memory limit, break out of the array.
+        break;
+      }
+    }
+  }
 }
