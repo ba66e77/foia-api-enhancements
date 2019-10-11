@@ -1,0 +1,13 @@
+enabled: true
+interval: 0
+storage: xhprof.file_storage
+exclude: "/contextual/*\r\n/toolbar/*\r\n/admin/*\r\n/profiler/*\r\n*.js\r\n*.css"
+exclude_indirect_functions: false
+flags:
+  FLAGS_CPU: FLAGS_CPU
+  FLAGS_MEMORY: FLAGS_MEMORY
+  FLAGS_NO_BUILTINS: '0'
+show_summary_toolbar: null
+_core:
+  default_config_hash: rzLRjfCTsgd4s021DeXFUboiQb_74hMz6pmmst50Neo
+extension: tideways_xhprof

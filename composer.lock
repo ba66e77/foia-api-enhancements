@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d1e12855c756f665e433323f4424f140",
+    "content-hash": "ade47a8b60dfee28ab32a345c263cf2d",
     "packages": [
         {
             "name": "acquia/blt",
@@ -5987,6 +5987,61 @@
             "homepage": "https://www.drupal.org/project/file_entity",
             "support": {
                 "source": "https://git.drupalcode.org/project/file_entity"
+            }
+        },
+        {
+            "name": "drupal/forms_steps",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/forms_steps.git",
+                "reference": "8.x-1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/forms_steps-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "3284c107ff35cb426158fa0c77e67456f29b6e02"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.2",
+                    "datestamp": "1565805303",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "HakimR",
+                    "homepage": "https://www.drupal.org/user/3008327"
+                },
+                {
+                    "name": "christophe.klein",
+                    "homepage": "https://www.drupal.org/user/1724590"
+                },
+                {
+                    "name": "nicoloye",
+                    "homepage": "https://www.drupal.org/user/315225"
+                }
+            ],
+            "description": "Provides Drupal multiple forms steps capability using forms views.",
+            "homepage": "https://www.drupal.org/project/forms_steps",
+            "support": {
+                "source": "https://git.drupalcode.org/project/forms_steps"
             }
         },
         {

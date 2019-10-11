@@ -1,8 +1,9 @@
-uuid: 82f6549e-d39a-4ee7-80cc-a60ceacf9e1a
+uuid: 1ba3b72f-e2e3-40d7-ad67-ef2f15377469
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_form_mode.node.annual_report_ever
     - field.field.node.annual_foia_report_data.field_admin_app_via
     - field.field.node.annual_foia_report_data.field_admin_app_vib
     - field.field.node.annual_foia_report_data.field_admin_app_vic1
@@ -1867,10 +1868,10 @@ third_party_settings:
         description: 'If the component field is filled in, all other editable columns must be filled in. All values must be non-negative integers. The values entered for the current fiscal year must match those entered in VI.A. To add a component click "Add" above the "Agency Overall" fields. The "Agency Overall" field(s) will be autocalculated as you enter data in this section.'
         required_fields: true
       label: 'XII.E.(1). COMPARISON OF NUMBERS OF ADMINISTRATIVE APPEALS FROM PREVIOUS AND CURRENT ANNUAL REPORT -- APPEALS REC''D AND PROC''D'
-id: node.annual_foia_report_data.default
+id: node.annual_foia_report_data.annual_report_ever
 targetEntityType: node
 bundle: annual_foia_report_data
-mode: default
+mode: annual_report_ever
 content:
   field_admin_app_via:
     type: entity_reference_paragraphs
