@@ -72,7 +72,7 @@ drupal_install_site: false
 configure_drush_aliases: false
 
 extra_packages: [patchutils, sqlite]
-installed_extras: [adminer, selenium, drush, mailhog, memcached, nodejs, solr, xdebug]
+installed_extras: [adminer, selenium, drush, mailhog, memcached, nodejs, solr, xdebug, tideways]
 
 # PHP 7.2.
 php_version: "7.2"

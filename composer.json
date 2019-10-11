@@ -49,6 +49,7 @@
         "drupal/view_unpublished": "^1.0@alpha",
         "drupal/views_data_export": "^1.0",
         "drupal/webform": "^5.2",
+        "drupal/xhprof": "1.x-dev",
         "drush/drush": "~9.0",
         "npm-asset/jquery-validation": "^1.19"
     },
