@@ -346,6 +346,14 @@ targetEntityType: node
 bundle: annual_foia_report_data
 mode: annual_report_statutes
 content:
+  field_footnotes_iv:
+    type: string_textarea
+    weight: 9
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
   field_statute_iv:
     type: entity_reference_paragraphs
     weight: 8
@@ -358,14 +366,6 @@ content:
       default_paragraph_type: ''
     third_party_settings: {  }
     region: content
-  field_footnotes_iv:
-    type: string_textarea
-    weight: 9
-    region: content
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
     weight: 2
@@ -390,7 +390,12 @@ hidden:
   field_admin_app_vic4: true
   field_admin_app_vic5: true
   field_admin_app_viie: true
+  field_agency: true
+  field_agency_abbr: true
+  field_agency_components: true
+  field_date_prepared: true
   field_fees_x: true
+  field_foia_annual_report_yr: true
   field_foia_pers_costs_ix: true
   field_foia_requests_va: true
   field_foia_requests_vb1: true
