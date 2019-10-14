@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "01e9703e94e8943e774002be284908ff",
+    "content-hash": "273930f7d1e7acef2f6d2b3703d81aa2",
     "packages": [
         {
             "name": "acquia/blt",
@@ -847,7 +847,8 @@
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/fengyuanchen/cropper/zipball/30c58b29ee21010e17e58ebab165fbd84285c685",
-                "reference": "30c58b29ee21010e17e58ebab165fbd84285c685"
+                "reference": "30c58b29ee21010e17e58ebab165fbd84285c685",
+                "shasum": null
             },
             "type": "bower-asset",
             "license": [
@@ -865,7 +866,8 @@
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/enyo/dropzone/zipball/08b9e0a763b54a685404dea523a9c54242fbe1b9",
-                "reference": "08b9e0a763b54a685404dea523a9c54242fbe1b9"
+                "reference": "08b9e0a763b54a685404dea523a9c54242fbe1b9",
+                "shasum": null
             },
             "type": "bower-asset"
         },
@@ -880,7 +882,8 @@
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/15bc73803f76bc53b654b9fdbbbc096f56d7c03d",
-                "reference": "15bc73803f76bc53b654b9fdbbbc096f56d7c03d"
+                "reference": "15bc73803f76bc53b654b9fdbbbc096f56d7c03d",
+                "shasum": null
             },
             "type": "bower-asset",
             "license": [
@@ -898,7 +901,8 @@
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/kenwheeler/slick/zipball/0f40c9d6a02a5c08b5f4dd80fdada3a854a59bee",
-                "reference": "0f40c9d6a02a5c08b5f4dd80fdada3a854a59bee"
+                "reference": "0f40c9d6a02a5c08b5f4dd80fdada3a854a59bee",
+                "shasum": null
             },
             "require": {
                 "bower-asset/jquery": ">=1.7"
@@ -5354,7 +5358,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.6",
-                    "datestamp": "1539588781",
+                    "datestamp": "1570284187",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5986,6 +5990,61 @@
             "homepage": "https://www.drupal.org/project/file_entity",
             "support": {
                 "source": "https://git.drupalcode.org/project/file_entity"
+            }
+        },
+        {
+            "name": "drupal/forms_steps",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/forms_steps.git",
+                "reference": "8.x-1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/forms_steps-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "3284c107ff35cb426158fa0c77e67456f29b6e02"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.2",
+                    "datestamp": "1565805303",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "HakimR",
+                    "homepage": "https://www.drupal.org/user/3008327"
+                },
+                {
+                    "name": "christophe.klein",
+                    "homepage": "https://www.drupal.org/user/1724590"
+                },
+                {
+                    "name": "nicoloye",
+                    "homepage": "https://www.drupal.org/user/315225"
+                }
+            ],
+            "description": "Provides Drupal multiple forms steps capability using forms views.",
+            "homepage": "https://www.drupal.org/project/forms_steps",
+            "support": {
+                "source": "https://git.drupalcode.org/project/forms_steps"
             }
         },
         {
@@ -12704,7 +12763,9 @@
             "version": "1.19.1",
             "dist": {
                 "type": "tar",
-                "url": "https://registry.npmjs.org/jquery-validation/-/jquery-validation-1.19.1.tgz"
+                "url": "https://registry.npmjs.org/jquery-validation/-/jquery-validation-1.19.1.tgz",
+                "reference": null,
+                "shasum": null
             },
             "type": "npm-asset",
             "license": [
