@@ -1,6 +1,5 @@
 module:
   address: 0
-  autologout: 0
   autosave_form: 0
   basic_auth: 0
   block: 0
@@ -49,6 +48,7 @@ module:
   foia_users: 0
   foia_webform: 0
   foia_workflow: 0
+  forms_steps: 0
   help: 0
   history: 0
   hsts: 0
