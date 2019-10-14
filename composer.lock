@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "273930f7d1e7acef2f6d2b3703d81aa2",
+    "content-hash": "a241bdcaec52ab49f2861787d2a09d9a",
     "packages": [
         {
             "name": "acquia/blt",
@@ -6021,6 +6021,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "Drush command for creating forms_steps workflow for existing content": "https://www.drupal.org/files/issues/2019-09-19/forms_steps-drush_command-3034105-15-8.x-1.x.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",

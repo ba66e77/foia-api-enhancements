@@ -110,6 +110,9 @@
             },
             "drupal/paragraphs": {
                 "Fixes Error: Call to a member function id() on null, see drupal.org/node/2948778": "https://www.drupal.org/files/issues/2019-08-08/paragraphs-call_id_on_null-2948778-16.patch"
+            },
+            "drupal/forms_steps": {
+                "Drush command for creating forms_steps workflow for existing content": "https://www.drupal.org/files/issues/2019-09-19/forms_steps-drush_command-3034105-15-8.x-1.x.patch"
             }
         },
         "installer-types": [
