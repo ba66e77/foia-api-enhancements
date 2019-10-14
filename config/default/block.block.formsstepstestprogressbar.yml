@@ -1,0 +1,27 @@
+uuid: 78899a27-7e46-4cca-90b4-70fba00296da
+langcode: en
+status: true
+dependencies:
+  module:
+    - forms_steps
+    - system
+  theme:
+    - bartik
+id: formsstepstestprogressbar
+theme: bartik
+region: content
+weight: -2
+provider: null
+plugin: 'forms_steps_progress_bar:test'
+settings:
+  id: 'forms_steps_progress_bar:test'
+  label: 'Forms Steps - Test (Progress bar)'
+  provider: forms_steps
+  label_display: visible
+  progress_bar_settings: null
+visibility:
+  request_path:
+    id: request_path
+    pages: '/annual_report/*'
+    negate: false
+    context_mapping: {  }

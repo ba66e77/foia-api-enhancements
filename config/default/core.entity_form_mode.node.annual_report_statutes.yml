@@ -1,0 +1,14 @@
+uuid: d3b12f44-7dc8-417e-9cd6-3d7dd6a52578
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - node
+third_party_settings:
+  lightning_core:
+    description: ''
+id: node.annual_report_statutes
+label: 'Annual Report statutes'
+targetEntityType: node
+cache: true
