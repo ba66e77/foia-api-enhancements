@@ -21,11 +21,23 @@ steps:
     displayPrevious: 0
   everything_else:
     label: 'Everything else'
-    weight: 1
+    weight: 2
     entity_type: node
     entity_bundle: annual_foia_report_data
     form_mode: node.annual_report_ever
     url: /annual_report/the_rest
+    submitLabel: null
+    hideDelete: 0
+    deleteLabel: null
+    cancelLabel: null
+    displayPrevious: 0
+  statutes:
+    label: Statutes
+    weight: 1
+    entity_type: node
+    entity_bundle: annual_foia_report_data
+    form_mode: node.annual_report_statutes
+    url: /annual_report/statutes
     submitLabel: null
     hideDelete: 0
     deleteLabel: null
