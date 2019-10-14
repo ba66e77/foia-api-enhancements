@@ -1,0 +1,14 @@
+uuid: e2898d19-48d3-400a-a151-5c10e3dbeb40
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - node
+third_party_settings:
+  lightning_core:
+    description: ''
+id: node.annual_report_ever
+label: 'Annual Report everything else'
+targetEntityType: node
+cache: true
