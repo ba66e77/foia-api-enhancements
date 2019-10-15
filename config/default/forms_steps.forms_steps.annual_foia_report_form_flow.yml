@@ -2,9 +2,9 @@ uuid: 35e38fd3-030c-45cd-8cea-cbfd3b45bffe
 langcode: en
 status: true
 dependencies: {  }
-id: test
-label: Test
-description: ''
+id: annual_foia_report_form_flow
+label: 'Annual FOIA Report form flow'
+description: 'Defines a form flow for creating and editing Annual FOIA Reports.'
 redirection_policy: ''
 redirection_target: ''
 steps:
