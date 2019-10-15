@@ -44,13 +44,39 @@ steps:
     cancelLabel: null
     displayPrevious: 0
 progress_steps:
-  progress:
-    label: Progress
-    weight: 0
+  everything_else:
+    label: 'Everything else'
+    weight: 2
     routes:
       basic_info: basic_info
-      everything_else: everything_else
+      statutes: statutes
+      everything_else: 0
     link: everything_else
     link_visibility:
       basic_info: basic_info
+      statutes: statutes
+      everything_else: 0
+  progress:
+    label: 'Basic info'
+    weight: 0
+    routes:
+      basic_info: basic_info
+      statutes: statutes
+      everything_else: everything_else
+    link: basic_info
+    link_visibility:
+      basic_info: basic_info
+      statutes: statutes
+      everything_else: everything_else
+  statutes:
+    label: Statutes
+    weight: 1
+    routes:
+      basic_info: basic_info
+      everything_else: everything_else
+      statutes: 0
+    link: statutes
+    link_visibility:
+      basic_info: basic_info
+      statutes: statutes
       everything_else: everything_else

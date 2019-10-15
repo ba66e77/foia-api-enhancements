@@ -1,4 +1,4 @@
-uuid: 78899a27-7e46-4cca-90b4-70fba00296da
+uuid: a37f0c34-fc03-49b1-a6f3-08db233bed48
 langcode: en
 status: true
 dependencies:
@@ -7,15 +7,15 @@ dependencies:
     - system
   theme:
     - bartik
-id: formsstepstestprogressbar
+id: formsstepsannualfoiareportformflowprogressbar
 theme: bartik
 region: content
 weight: -2
 provider: null
-plugin: 'forms_steps_progress_bar:test'
+plugin: 'forms_steps_progress_bar:annual_foia_report_form_flow'
 settings:
-  id: 'forms_steps_progress_bar:test'
-  label: 'Forms Steps - Test (Progress bar)'
+  id: 'forms_steps_progress_bar:annual_foia_report_form_flow'
+  label: 'Forms Steps - Annual FOIA Report form flow (Progress bar)'
   provider: forms_steps
   label_display: visible
   progress_bar_settings: null
